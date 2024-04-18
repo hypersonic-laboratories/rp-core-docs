@@ -1,0 +1,58 @@
+# Camera Class
+Camera Class, used as an abstraction layer with additional features to make HUD management easier.
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| location    |  Vector   |   true |
+
+## Methods
+### SetCamActive(active)
+Sets the camera as active or not.
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| active    |  Boolean   |   false |
+
+```lua
+    camera.SetCamActive(true)
+```
+
+### EnableFreecam(active)
+Sets the freecam as active or not.
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| active    |  Boolean   |   false |
+
+```lua
+    camera.EnableFreecam(true)
+```
+
+### SetPosition(coords)
+Sets the camera's Vector position.
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| coords    |  Vector   |   false |
+
+```lua
+    camera.SetPosition(Vector(100, 0, 0))
+```
+
+### SetRotation(rotation)
+Sets the camera's Rotator rotation.
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| rotation    |  Rotator   |   false |
+
+```lua
+    camera.SetRotation(Rotator(100, 0, 0))
+```
+
+### Destroy()
+Destroys the camera.
+
+```lua
+    camera.Destroy()
+```
