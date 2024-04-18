@@ -1,0 +1,256 @@
+# Server
+Player Class with functions used to assist
+
+## Methods
+### revive(location?)
+Revives the player, if location is given it will revive them at the coordinates
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.revive()
+```
+
+### slay()
+Slays the player, instantly killing them on the spot
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.slay()
+```
+
+### save ()
+Saves the players savable data to the database.
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.slay()
+```
+
+### getXP()
+Returns the players current XP level.
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+local xp = xPlayer.getXP()
+```
+
+### getInventoryTarget()
+Returns the players current inventory target.
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+local inventoryTarget = xPlayer.getInventoryTarget()
+```
+
+### getVehicle()
+Returns the vehicle the player is currently in, if none it will return nil.
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+local vehicle = xPlayer.getVehicle()
+```
+
+### get(key)
+Returns a stored key value on the player class, this can be used for dynamic variables.
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.set('foo', 'bar')
+
+local x = xPlayer.get('foo') -- x = 'bar'
+```
+
+### getID()
+Returns the players session ID.
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+local x = xPlayer.getID()
+```
+### getName()
+Returns the players' roleplay name.
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+local x = xPlayer.getName()
+```
+
+### getIdentifier()
+Returns the players' unqiue account identifier.
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+local x = xPlayer.getIdentifier()
+```
+
+### getMoney()
+Returns the players' cash money balance.
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+local x = xPlayer.getMoney()
+```
+
+### getBank()
+Returns the players' bank balance.
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+local x = xPlayer.getBank()
+```
+
+### getAccount(account)
+Returns the players' target account.
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+local x = xPlayer.getAccount('money')
+```
+
+### getStat(stat)
+Returns the players' target stat (eg, hunger, thirst, stress).
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+local x = xPlayer.getStat('hunger')
+```
+
+### getSkin()
+Returns the players' skin.
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+local x = xPlayer.getSkin()
+```
+
+### getCharId()
+Returns the players' current characters unique identifier.
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+local x = xPlayer.getCharId()
+```
+
+### setJob(job)
+Sets the players' current job.
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.setJob({ name = 'police', grade = 0 })
+```
+
+### set(key, value)
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.set('foo', 'bar')
+```
+
+### setName(value)
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.setName('Billy Bob')
+```
+
+### addMoney(value)
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.addMoney(5000)
+```
+
+### removeMoney(value)
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.removeMoney(5000)
+```
+
+### addBankMoney(value)
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.addBankMoney(5000)
+```
+
+### removeBankMoney(value)
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.removeBankMoney(5000)
+```
+
+### addAccountMoney(account, value)
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.addAccountMoney("bank", 5000)
+```
+
+### removeAccountMoney(account, value)
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.removeAccountMoney("bank", 5000)
+```
+
+### setAccount(account, table)
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.setAccount("bank", { ... })
+```
+
+### setStat(stat, value)
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.setStat("stress", 50)
+```
+
+### setSkin(table)
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+local new_skin = xPlayer.getSkin()
+
+xPlayer.setSkin(new_skin)
+```
+
+### showNotification()
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.showNotification(new_skin)
+```
+
+### kick(reason)
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.kick("Stinky player found!")
+```
+
+### updateData()
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.updateData()
+```
+
+### addItem(item, count, metadata?, slot?)
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.addItem('bread', 1)
+```
+
+### removeItem(item, count, metadata?, slot?)
+```lua
+local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+xPlayer.removeItem('bread', 1)
+```
+
+## Attributes

@@ -1,0 +1,74 @@
+# HUD Management
+HUD Management module, used as an abstraction layer with additional features to make HUD management easier.
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| location    |  Vector   |   true |
+
+## Methods
+### Destroy()
+Destroys the HUD, note that if you use this you'll need to recreate the HUD if you want to use it again. 
+
+```lua
+    hud.Destroy()
+```
+
+### Hide()
+Hides the HUD, note that if you want an event to be triggered you have to set the closeEvent param. 
+
+```lua
+    hud.Hide()
+```
+
+
+### Subscribe(event, callback)
+Subscribe to an event from the UI side. 
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| event    |  String   |   false |
+| callback    |  Function   |   false |
+
+```lua
+    hud.Subscribe('boughtItem', function(data)
+        -- Event logic here
+    end)
+```
+
+### Call(event, args?...)
+Call to an event from the LUA side to the JS side. 
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| event    |  String   |   false |
+| args    |  Any   |   true |
+
+```lua
+    hud.Call('openUI', 'foo', 'bar')
+```
+
+### Focus(enableMouse, enableInput)
+Sets focus for the UI. 
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| enableMouse    |  Boolean   |   false |
+| enableInput    |  Boolean   |   false |
+
+```lua
+    hud.Focus(true, true)
+```
+
+### SubscribeCallback(event, callback)
+Subscribes a callback to the UI side. 
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| event    |  String   |   false |
+| callback    |  String   |   false |
+
+```lua
+    hud.SubscribeCallback('checkForItem', function(data, cb)
+        local item = data.item
+
+        Core.TriggerCallback('eventToCheckForItemCount', function(hasItem)
+            cb(hasItem)
+        end, item)
+    end)
+```

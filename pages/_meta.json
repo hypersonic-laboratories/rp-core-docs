@@ -1,0 +1,12 @@
+{
+  "index": "Introduction",
+  "player-class": "Player Class",
+  "hud-class": "HUD Class",
+  "advanced": "Advanced (A Folder)",
+  "helix": {
+    "title": "HELIX Game",
+    "type": "page",
+    "href": "https://helixgame.com/",
+    "newWindow": true
+  }
+}
