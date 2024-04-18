@@ -9,7 +9,7 @@ const config: DocsThemeConfig = {
   chat: {
     link: 'https://discord.com',
   },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase: 'https://github.com/hypersonic-laboratories/rp-core-docs',
   footer: {
     text: 'Hypersonic Laboratories @ 2024',
   },
