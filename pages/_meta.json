@@ -1,5 +1,7 @@
 {
   "index": "Introduction",
+  "functions": "Functions",
+  "callbacks": "Callbacks",
   "classes": "Classes",
   "helix": {
     "title": "HELIX Game",

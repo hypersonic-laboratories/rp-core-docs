@@ -1,11 +1,65 @@
+import { Steps } from 'nextra/components'
+
 # Introduction
  
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+Welcome to the official H.E.L.I.X roleplay framework!
 
-## What is Nextra?
+This project aims to provide a framework to allow easy expansion for users to build roleplay servers, with supported economy and item management as well as many more in-depth features. The framework additionally provides an abstraction layer on top of more complex features to give a more seamless user experience, such as a Vehicle Management System or User Interface Management System.
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+# Installation
 
-## Documentation
+<Steps>
+### Download the source code
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+```bash
+git clone https://github.com/hypersonic-laboratories/rp-core.git
+```
+ 
+### Set the Gamemode
+Set the package name as the gamemode in your servers configuration file.
+#### Example
+
+```yaml {29}
+    # server configurations
+[server]
+    # server name
+    name =              "HELIX server"
+    # server description (max 127 characters)
+    description =       ""
+    # server logo URL (recommended size: 150x75)
+    logo =              ""
+    # max players
+    max_players =       10
+    # leave it blank for no password
+    password =          ""
+    # server IP. we recommend leaving it 0.0.0.0 for default
+    ip =                "0.0.0.0"
+    # server port (TCP and UDP forwarding needed)
+    port =              7777
+    # query port (UDP forwarding needed)
+    query_port =        7778
+    # announce server in the master server list
+    announce =          true
+    # server tick rate in milliseconds (dangerous! server will tick at each [tick_rate] ms, affecting both server and client performance. 33 ms means 30 ticks per second and is the default and recommended value)
+    tick_rate =         33
+    # log Level. (1) normal - (2) debug - (3) verbose
+    log_level =         2
+
+# HELIX configurations
+[world]
+    # game-mode package to load (set the main game-mode package to load - you can load only one 'game-mode' package type at once)
+    game_mode =         "pcrp-core"
+    # packages script list (leave it blank to load all packages, this is usually useful when you have tons of packages downloaded and only wants to load one or some)
+    packages = []
+    # asset packs list (this will additionally load the asset packs you define here)
+    assets = [
+
+    ]
+    # default startup map
+    map =               "helix::BlankMap"
+    # banned HELIX account IDs
+    banned_ids = [
+
+    ]
+```
+</Steps>

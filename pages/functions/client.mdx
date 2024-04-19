@@ -1,0 +1,143 @@
+# Functions
+This is a class used to manage and maintain multiple different points. Allowing tracking players interactions easier.
+
+
+### GetConfig()
+Sets the marker as visible.
+
+```lua
+local cfg = Core.GetConfig()
+```
+
+### Core.RegisterHUD(...args)
+name, location, closeEvent
+```lua
+local hud = Core.RegisterHUD('hud', './ui/main.html', 'closeEvent')
+
+Events.Subscribe('closeEvent', function()
+    -- Ran when the hud is closed
+end)
+```
+
+### Core.GetHUD(name)
+```lua
+local hud = Core.GetHUD('hud')
+
+-- Logic here
+```
+
+### Core.PlayAnimation(...args)
+anim, slot_flag, loop, blend_in_time, blend_out_time, play_rate, stop_all_montages
+```lua
+Core.PlayAnimation("griddy", AnimationSlotType.FullBody, false, 0.25, 0.25, 1.0, false)
+```
+
+### Core.StopAnimation(anim)
+```lua
+Core.StopAnimation("griddy")
+```
+
+### Core.RegisterInput(...args)
+key, onPress, onRelease
+```lua
+local onPress = function()
+
+end
+
+local onRelease = function()
+
+end
+
+Core.RegisterInput("E", onPress, onRelease)
+```
+
+### Core.HideHUD()
+```lua
+Core.HideHUD()
+```
+
+### Core.ShowHUD()
+```lua
+Core.ShowHUD()
+```
+
+### Core.BlurScreen(...args)
+bool, ms
+```lua
+Core.BlurScreen()
+```
+
+### Core.ShowNotification(...args)
+message, title, type, duration
+```lua
+Core.ShowNotification('Hello World!', 'Opod is cool', 'info', 5000)
+```
+
+### Core.GetNearestVehicle()
+```lua
+local vehicle = Core.GetNearestVehicle()
+```
+
+### Core.GetClosestPlayer()
+```lua
+local player = Core.GetClosestPlayer()
+```
+
+### Core.IsPlayerInAnyVehicle()
+```lua
+local inVehicle = Core.IsPlayerInAnyVehicle()
+```
+
+### Core.CloseInteraction()
+```lua
+Core.CloseInteraction()
+```
+
+### Core.OpenActionMenu(...args)
+onClick, onCancel
+```lua
+local onClick = function()
+
+end
+
+local onCancel = function()
+
+end
+
+Core.OpenActionMenu(onClick, onCancel)
+```
+
+### Core.AddInteraction(...args)
+key, text, hold, duration
+```lua
+Core.AddInteraction('E', 'Refill Gas', 5000)
+```
+
+### Core.RemoveInteraction(key)
+```lua
+Core.RemoveInteraction('E')
+```
+
+### Core.ScreenFadeOut(ms)
+```lua
+Core.ScreenFadeOut(2500)
+```
+
+### Core.ScreenFadeIn(ms)
+```lua
+Core.ScreenFadeIn(2500)
+```
+
+### Core.ProgressBar(table)
+```lua
+local properties = {
+    onFinish = function(canceled)
+        if not canceled then return end
+
+        print('finished)
+    end,
+    duration = 5000,
+    label = "Fishing",
+}
+Core.ProgressBar(properties)
+```

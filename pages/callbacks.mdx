@@ -1,0 +1,46 @@
+import { Callout, Tabs } from 'nextra/components'
+ 
+# Callbacks
+
+<Callout type="info" emoji="ℹ️">
+    Note: When intending to trigger a callback, it needs to be registered on the server side.
+</Callout>
+
+<Tabs items={['Client', 'Server']}>
+  <Tabs.Tab>
+        ### Core.TriggerCallback(...args)
+        Trigger a server callback, used to retrieve information from the server side and returns it to the client side.
+
+        | variable   | type | optional | 
+        | :----- | :----: | ----: |
+        | event    |  String   |   false |
+        | callback    |  Function   |   false |
+        | ...args    |  Any   |   true |
+
+        ```lua
+        Core.TriggerCallback('getPlayerItem', function(item)
+            -- More logic here        
+        end, 'money')
+        ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+        ### Core.CreateCallback(...args)
+        Register a server callback, used to send information from the server side and returns it to the client side.
+
+        | variable   | type | optional | 
+        | :----- | :----: | ----: |
+        | event    |  String   |   false |
+        | callback    |  Function   |   false |
+
+        ```lua
+        Core.CreateCallback('getPlayerItem', function(player, cb, item)
+            local xPlayer = Core.GetPlayerFromId(player:GetID())
+
+            local foundItem = xPlayer.inventory.GetItem(item)
+            
+            -- The arguments passed through to cb function will be returned to client.
+            cb(foundItem)
+        end)
+        ```  
+  </Tabs.Tab>
+</Tabs>
