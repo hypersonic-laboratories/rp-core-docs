@@ -1,6 +1,7 @@
 {
-  "camera": "Camera",
   "player": "Player",
   "marker": "Marker",
+  "vehicle": "Vehicle",
+  "camera": "Camera",
   "hud": "User Interface"
 }

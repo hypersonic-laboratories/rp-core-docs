@@ -1,0 +1,145 @@
+# Functions
+This is a class used to manage and maintain multiple different points. Allowing tracking players interactions easier.
+
+
+### GetPlayerFromId(id)
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| id    |  Number   |   false |
+
+```lua
+local xPlayer = Core.GetPlayerFromId(1)
+```
+
+### GetPlayerFromCharacter(character)
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| character    |  HELIXCharacter   |   false |
+
+```lua
+local xPlayer = Core.GetPlayerFromCharacter(character)
+```
+
+### RegisterSavedVariable(...args)
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| variable    |  String   |   false |
+| table    |  String   |   false |
+| column    |  String   |   false |
+| default    |  Any   |   false |
+
+
+```lua
+Core.RegisterSavedVariable('is_cuffed', 'users', 'is_cuffed', false)
+```
+
+
+### GetNearestVehicle(player)
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| player    |  Player   |   false |
+
+
+```lua
+local vehicle = Core.GetNearestVehicle(player)
+```
+
+
+### AddNametag(...args)
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| prop    |  Actor   |   false |
+| text    |  String   |   false |
+
+```lua
+Core.AddNametag(player, "Opod")
+```
+
+### CreateMarker(...args)
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| name    |  String   |   false |
+| props    |  \{ coords?: Vector, rotation?: Rotator, model?: String, collision?: Number \}   |   false |
+| text    |  String   |   true |
+| distance    |  Float   |   true |
+| propDisable    |  boolean   |   true |
+
+```lua
+local marker = Core.CreateMarker("test", { coords: Vector(0, 10, 0) })
+```
+
+### CreateVehicle(...args)
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| model    |  String   |   false |
+| coords    |  Vector   |   false |
+| heading    |  Rotator   |   false |
+| vin    |  String   |   false |
+| fuel    |  Float   |   false |
+
+```lua
+local vehicle = Core.CreateVehicle("Sedan", Vector(0, 10, 0))
+```
+
+### SetVehicleFuel(...args)
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| vehicle    |  Vehicle   |   false |
+| fuel    |  Float   |   false |
+
+```lua
+Core.SetVehicleFuel(vehicle, 100.0)
+```
+
+
+### CreateItem(...args)
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| name    |  String   |   false |
+| info    |  \{ label?: String, name?: String, weight?: Float, unique?: Bool, type?: String, description?: String \}   |   false |
+
+
+```lua
+Core.CreateItem('banana', {
+    label = "Banana",
+    weight = 1,
+    unique = false,
+    description = "Ripe yellow Banana!"
+})
+```
+### CreateUseableItem(...args)
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| item    |  String   |   false |
+| cb    |  Function   |   false |
+
+
+```lua
+Core.CreateUseableItem('banana', function(xPlayer, item, slot)
+    xPlayer.removeItem(item, 1)
+end)
+```
+
+### UseItem(...args)
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| player    |  Player   |   false |
+| item    |  String   |   false |
+| slot    |  Number   |   true |
+| extra    |  String   |   true |
+
+
+```lua
+Core.UseItem(player, 'banana')
+```
