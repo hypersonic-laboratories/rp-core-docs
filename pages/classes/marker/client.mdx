@@ -1,0 +1,241 @@
+# Marker Class
+This is a class used to manage and maintain multiple different points. Allowing tracking players interactions easier.
+
+## Creating a Marker:
+The CreatePoint function is used to create a new Marker instance. 
+
+It takes a data table as input with the following properties:
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| coords    |  Vector  |   false |
+| distance    |  Float  |   false |
+| marker    |  Table  |   false |
+| text    |  Table  |   false |
+| prompt    |  Table  |   false |
+| interactions    |  String or Table  |   false |
+
+
+### Example Usage:
+```lua
+    local point = CreatePoint({
+        coords = Vector(10, 2, 5),
+        marker = { type = Markers.Arrow, color = Color.RED, scale = Vector(2, 2, 2) },
+        text = { text = "This is a Marker!", color = Color.WHITE, scale = Vector(0.2, 0.2, 0.2) }
+    })
+
+    function point:nearby()
+        if self.currentDistance <= 10 then
+            if not self.textVisible then
+                self:showText()
+            end
+
+            if self:isKeyJustPressed('E') then
+                print('Pressed me')
+            end
+        elseif self.textVisible then
+            self:hideText()
+        end
+    end
+```
+
+## Markers Struct
+There is a markers struct available to more easily select the marker model.
+
+Markers
+| key   | value | 
+| :----- | :----: |
+| Arrow    |  pco-markers::SM_MarkerArrow |
+| Circle    |  pco-markers::SM_MarkerCircle |
+| Cylinder    |  pco-markers::SM_MarkerCylinder |
+
+```lua
+    print(Markers.Arrow)
+    print(Markers.Circle)
+    print(Markers.Cylinder)
+```
+
+## Methods
+### showPrompt()
+Sets the prompt as visible.
+
+```lua
+    point:showPrompt()
+```
+### hidePrompt()
+Sets the prompt as hidden.
+
+```lua
+    point:hidePrompt()
+```
+
+### showText()
+Sets the text as visible.
+
+```lua
+    point:showText()
+```
+
+### hideText()
+Sets the text as hidden.
+
+```lua
+    point:hideText()
+```
+
+### updateText(table)
+Updates properties of the text.
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| table    |  Table ( \{ text? = String, color? = Color, scale? = Vector \} )   |   false |
+
+
+```lua
+    point:updateText({ text = "Opod is cool", color = Color.RED, scale = Vector(10, 10, 10) })
+```
+
+### updateMarker(table)
+Updates properties of the marker.
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| table    |  Table ( \{ color? = Color, scale? = Vector \} )   |   false |
+
+
+```lua
+    point:updateMarker({ color = Color.RED, scale = Vector(10, 10, 10) })
+```
+
+### showMarker()
+Sets the marker as visible.
+
+```lua
+    point:showMarker()
+```
+
+### hideMarker()
+Sets the marker as hidden.
+
+```lua
+    point:hideMarker()
+```
+
+### destroy()
+Destroys the marker.
+
+```lua
+    point:destroy()
+```
+
+### onEnter()
+Triggered when entering a marker
+
+```lua
+    function point:onEnter()
+        if self.markerVisible then
+            return
+        end
+
+        self:showMarker()
+    end
+```
+
+### onExit()
+Triggered when exiting a marker
+
+```lua
+    function point:onExit()
+        if not self.markerVisible then
+            return
+        end
+
+        self:hideMarker()
+    end
+```
+
+### nearby()
+Triggered when nearby a marker
+
+```lua
+    function point:nearby()
+        if self.currentDistance <= 10 then
+            if not self.textVisible then
+                self:showText()
+            end
+        elseif self.textVisible then
+            self:hideText()
+        end
+    end
+```
+
+### isKeyPressed(key)
+Check is a key is currently being pressed
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| key    |  Char   |   false |
+
+
+```lua
+    function point:nearby()
+        if self.currentDistance <= 10 then
+            if not self.textVisible then
+                self:showText()
+            end
+
+            if self:isKeyPressed('E') then
+                print('Pressed me')
+            end
+        elseif self.textVisible then
+            self:hideText()
+        end
+    end
+```
+
+### isKeyJustPressed(key)
+Check if a key has just been pressed.
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| key    |  Char   |   false |
+
+
+```lua
+    function point:nearby()
+        if self.currentDistance <= 10 then
+            if not self.textVisible then
+                self:showText()
+            end
+
+            if self:isKeyJustPressed('E') then
+                print('Pressed me')
+            end
+        elseif self.textVisible then
+            self:hideText()
+        end
+    end
+```
+
+### isKeyJustReleased(key)
+Check if a key has just been Released.
+
+| variable   | type | optional | 
+| :----- | :----: | ----: |
+| key    |  Char   |   false |
+
+
+```lua
+    function point:nearby()
+        if self.currentDistance <= 10 then
+            if not self.textVisible then
+                self:showText()
+            end
+
+            if self:isKeyJustReleased('E') then
+                print('Released me')
+            end
+        elseif self.textVisible then
+            self:hideText()
+        end
+    end
+```

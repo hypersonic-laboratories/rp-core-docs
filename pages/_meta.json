@@ -1,8 +1,6 @@
 {
   "index": "Introduction",
-  "player-class": "Player Class",
-  "hud-class": "HUD Class",
-  "advanced": "Advanced (A Folder)",
+  "classes": "Classes",
   "helix": {
     "title": "HELIX Game",
     "type": "page",
