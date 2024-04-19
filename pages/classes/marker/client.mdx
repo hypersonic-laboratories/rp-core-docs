@@ -16,7 +16,7 @@ It takes a data table as input with the following properties:
 
 
 ### Example Usage:
-```lua
+```lua copy
 local point = Core.CreateMarker({
     coords = Vector(10, 2, 5),
     marker = { type = Markers.Arrow, color = Color.RED, scale = Vector(2, 2, 2) },
@@ -48,7 +48,7 @@ Markers
 | Circle    |  pco-markers::SM_MarkerCircle |
 | Cylinder    |  pco-markers::SM_MarkerCylinder |
 
-```lua
+```lua copy
 print(Markers.Arrow)
 print(Markers.Circle)
 print(Markers.Cylinder)
@@ -58,27 +58,27 @@ print(Markers.Cylinder)
 ### showPrompt()
 Sets the prompt as visible.
 
-```lua
+```lua copy
 point:showPrompt()
 ```
 ### hidePrompt()
 Sets the prompt as hidden.
 
-```lua
+```lua copy
 point:hidePrompt()
 ```
 
 ### showText()
 Sets the text as visible.
 
-```lua
+```lua copy
 point:showText()
 ```
 
 ### hideText()
 Sets the text as hidden.
 
-```lua
+```lua copy
 point:hideText()
 ```
 
@@ -90,7 +90,7 @@ Updates properties of the text.
 | table    |  Table ( \{ text? = String, color? = Color, scale? = Vector \} )   |   false |
 
 
-```lua
+```lua copy
 point:updateText({ text = "Opod is cool", color = Color.RED, scale = Vector(10, 10, 10) })
 ```
 
@@ -102,35 +102,35 @@ Updates properties of the marker.
 | table    |  Table ( \{ color? = Color, scale? = Vector \} )   |   false |
 
 
-```lua
+```lua copy
 point:updateMarker({ color = Color.RED, scale = Vector(10, 10, 10) })
 ```
 
 ### showMarker()
 Sets the marker as visible.
 
-```lua
+```lua copy
 point:showMarker()
 ```
 
 ### hideMarker()
 Sets the marker as hidden.
 
-```lua
+```lua copy
 point:hideMarker()
 ```
 
 ### destroy()
 Destroys the marker.
 
-```lua
+```lua copy
 point:destroy()
 ```
 
 ### onEnter()
 Triggered when entering a marker
 
-```lua
+```lua copy
 function point:onEnter()
     if self.markerVisible then
         return
@@ -143,7 +143,7 @@ end
 ### onExit()
 Triggered when exiting a marker
 
-```lua
+```lua copy
 function point:onExit()
     if not self.markerVisible then
         return
@@ -156,7 +156,7 @@ end
 ### nearby()
 Triggered when nearby a marker
 
-```lua
+```lua copy
 function point:nearby()
     if self.currentDistance <= 10 then
         if not self.textVisible then
@@ -176,7 +176,7 @@ Check is a key is currently being pressed
 | key    |  Char   |   false |
 
 
-```lua
+```lua copy
 function point:nearby()
     if self.currentDistance <= 10 then
         if not self.textVisible then
@@ -200,7 +200,7 @@ Check if a key has just been pressed.
 | key    |  Char   |   false |
 
 
-```lua
+```lua copy
 function point:nearby()
     if self.currentDistance <= 10 then
         if not self.textVisible then
@@ -224,7 +224,7 @@ Check if a key has just been Released.
 | key    |  Char   |   false |
 
 
-```lua
+```lua copy
 function point:nearby()
     if self.currentDistance <= 10 then
         if not self.textVisible then

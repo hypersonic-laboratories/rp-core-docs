@@ -17,7 +17,7 @@ import { Callout, Tabs } from 'nextra/components'
         | callback    |  Function   |   false |
         | ...args    |  Any   |   true |
 
-        ```lua
+        ```lua copy
         Core.TriggerCallback('getPlayerItem', function(item)
             -- More logic here        
         end, 'money')
@@ -32,7 +32,7 @@ import { Callout, Tabs } from 'nextra/components'
         | event    |  String   |   false |
         | callback    |  Function   |   false |
 
-        ```lua
+        ```lua copy
         Core.CreateCallback('getPlayerItem', function(player, cb, item)
             local xPlayer = Core.GetPlayerFromId(player:GetID())
 

@@ -5,13 +5,13 @@ This is a class used to manage and maintain multiple different points. Allowing 
 ### GetConfig()
 Sets the marker as visible.
 
-```lua
+```lua copy
 local cfg = Core.GetConfig()
 ```
 
 ### Core.RegisterHUD(...args)
 name, location, closeEvent
-```lua
+```lua copy
 local hud = Core.RegisterHUD('hud', './ui/main.html', 'closeEvent')
 
 Events.Subscribe('closeEvent', function()
@@ -20,7 +20,7 @@ end)
 ```
 
 ### Core.GetHUD(name)
-```lua
+```lua copy
 local hud = Core.GetHUD('hud')
 
 -- Logic here
@@ -28,18 +28,18 @@ local hud = Core.GetHUD('hud')
 
 ### Core.PlayAnimation(...args)
 anim, slot_flag, loop, blend_in_time, blend_out_time, play_rate, stop_all_montages
-```lua
+```lua copy
 Core.PlayAnimation("griddy", AnimationSlotType.FullBody, false, 0.25, 0.25, 1.0, false)
 ```
 
 ### Core.StopAnimation(anim)
-```lua
+```lua copy
 Core.StopAnimation("griddy")
 ```
 
 ### Core.RegisterInput(...args)
 key, onPress, onRelease
-```lua
+```lua copy
 local onPress = function()
 
 end
@@ -52,50 +52,50 @@ Core.RegisterInput("E", onPress, onRelease)
 ```
 
 ### Core.HideHUD()
-```lua
+```lua copy
 Core.HideHUD()
 ```
 
 ### Core.ShowHUD()
-```lua
+```lua copy
 Core.ShowHUD()
 ```
 
 ### Core.BlurScreen(...args)
 bool, ms
-```lua
+```lua copy
 Core.BlurScreen()
 ```
 
 ### Core.ShowNotification(...args)
 message, title, type, duration
-```lua
+```lua copy
 Core.ShowNotification('Hello World!', 'Opod is cool', 'info', 5000)
 ```
 
 ### Core.GetNearestVehicle()
-```lua
+```lua copy
 local vehicle = Core.GetNearestVehicle()
 ```
 
 ### Core.GetClosestPlayer()
-```lua
+```lua copy
 local player = Core.GetClosestPlayer()
 ```
 
 ### Core.IsPlayerInAnyVehicle()
-```lua
+```lua copy
 local inVehicle = Core.IsPlayerInAnyVehicle()
 ```
 
 ### Core.CloseInteraction()
-```lua
+```lua copy
 Core.CloseInteraction()
 ```
 
 ### Core.OpenActionMenu(...args)
 onClick, onCancel
-```lua
+```lua copy
 local onClick = function()
 
 end
@@ -109,27 +109,27 @@ Core.OpenActionMenu(onClick, onCancel)
 
 ### Core.AddInteraction(...args)
 key, text, hold, duration
-```lua
+```lua copy
 Core.AddInteraction('E', 'Refill Gas', 5000)
 ```
 
 ### Core.RemoveInteraction(key)
-```lua
+```lua copy
 Core.RemoveInteraction('E')
 ```
 
 ### Core.ScreenFadeOut(ms)
-```lua
+```lua copy
 Core.ScreenFadeOut(2500)
 ```
 
 ### Core.ScreenFadeIn(ms)
-```lua
+```lua copy
 Core.ScreenFadeIn(2500)
 ```
 
 ### Core.ProgressBar(table)
-```lua
+```lua copy
 local properties = {
     onFinish = function(canceled)
         if not canceled then return end

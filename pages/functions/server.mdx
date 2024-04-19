@@ -8,7 +8,7 @@ This is a class used to manage and maintain multiple different points. Allowing 
 | :----- | :----: | ----: |
 | id    |  Number   |   false |
 
-```lua
+```lua copy
 local xPlayer = Core.GetPlayerFromId(1)
 ```
 
@@ -18,7 +18,7 @@ local xPlayer = Core.GetPlayerFromId(1)
 | :----- | :----: | ----: |
 | character    |  HELIXCharacter   |   false |
 
-```lua
+```lua copy
 local xPlayer = Core.GetPlayerFromCharacter(character)
 ```
 
@@ -32,7 +32,7 @@ local xPlayer = Core.GetPlayerFromCharacter(character)
 | default    |  Any   |   false |
 
 
-```lua
+```lua copy
 Core.RegisterSavedVariable('is_cuffed', 'users', 'is_cuffed', false)
 ```
 
@@ -44,7 +44,7 @@ Core.RegisterSavedVariable('is_cuffed', 'users', 'is_cuffed', false)
 | player    |  Player   |   false |
 
 
-```lua
+```lua copy
 local vehicle = Core.GetNearestVehicle(player)
 ```
 
@@ -56,7 +56,7 @@ local vehicle = Core.GetNearestVehicle(player)
 | prop    |  Actor   |   false |
 | text    |  String   |   false |
 
-```lua
+```lua copy
 Core.AddNametag(player, "Opod")
 ```
 
@@ -70,7 +70,7 @@ Core.AddNametag(player, "Opod")
 | distance    |  Float   |   true |
 | propDisable    |  boolean   |   true |
 
-```lua
+```lua copy
 local marker = Core.CreateMarker("test", { coords: Vector(0, 10, 0) })
 ```
 
@@ -84,7 +84,7 @@ local marker = Core.CreateMarker("test", { coords: Vector(0, 10, 0) })
 | vin    |  String   |   false |
 | fuel    |  Float   |   false |
 
-```lua
+```lua copy
 local vehicle = Core.CreateVehicle("Sedan", Vector(0, 10, 0))
 ```
 
@@ -95,7 +95,7 @@ local vehicle = Core.CreateVehicle("Sedan", Vector(0, 10, 0))
 | vehicle    |  Vehicle   |   false |
 | fuel    |  Float   |   false |
 
-```lua
+```lua copy
 Core.SetVehicleFuel(vehicle, 100.0)
 ```
 
@@ -108,7 +108,7 @@ Core.SetVehicleFuel(vehicle, 100.0)
 | info    |  \{ label?: String, name?: String, weight?: Float, unique?: Bool, type?: String, description?: String \}   |   false |
 
 
-```lua
+```lua copy
 Core.CreateItem('banana', {
     label = "Banana",
     weight = 1,
@@ -124,7 +124,7 @@ Core.CreateItem('banana', {
 | cb    |  Function   |   false |
 
 
-```lua
+```lua copy
 Core.CreateUseableItem('banana', function(xPlayer, item, slot)
     xPlayer.removeItem(item, 1)
 end)
@@ -140,6 +140,6 @@ end)
 | extra    |  String   |   true |
 
 
-```lua
+```lua copy
 Core.UseItem(player, 'banana')
 ```

@@ -1,60 +1,58 @@
+import { Callout, Tabs } from 'nextra/components'
+
 # Server
 Player Class with functions used to assist
+
+
+<Callout type="info" emoji="ℹ️">
+    Note: This is the player CLASS, when we refer to xPlayer here we aren't referring to the HELIX Player class rather a player data class which can be obtained like below.
+
+    ```lua copy
+    local xPlayer = Core.GetPlayerFromId(1) -- <- 1 can be any valid server ID 
+    ```
+</Callout>
+
 
 ## Methods
 ### revive(location?)
 Revives the player, if location is given it will revive them at the coordinates
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.revive()
 ```
 
 ### slay()
 Slays the player, instantly killing them on the spot
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.slay()
 ```
 
 ### save ()
 Saves the players savable data to the database.
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.slay()
 ```
 
 ### getXP()
 Returns the players current XP level.
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 local xp = xPlayer.getXP()
 ```
 
 ### getInventoryTarget()
 Returns the players current inventory target.
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 local inventoryTarget = xPlayer.getInventoryTarget()
 ```
 
 ### getVehicle()
 Returns the vehicle the player is currently in, if none it will return nil.
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 local vehicle = xPlayer.getVehicle()
 ```
 
 ### get(key)
 Returns a stored key value on the player class, this can be used for dynamic variables.
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.set('foo', 'bar')
 
 local x = xPlayer.get('foo') -- x = 'bar'
@@ -62,194 +60,142 @@ local x = xPlayer.get('foo') -- x = 'bar'
 
 ### getID()
 Returns the players session ID.
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 local x = xPlayer.getID()
 ```
 ### getName()
 Returns the players' roleplay name.
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 local x = xPlayer.getName()
 ```
 
 ### getIdentifier()
 Returns the players' unqiue account identifier.
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 local x = xPlayer.getIdentifier()
 ```
 
 ### getMoney()
 Returns the players' cash money balance.
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 local x = xPlayer.getMoney()
 ```
 
 ### getBank()
 Returns the players' bank balance.
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 local x = xPlayer.getBank()
 ```
 
 ### getAccount(account)
 Returns the players' target account.
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 local x = xPlayer.getAccount('money')
 ```
 
 ### getStat(stat)
 Returns the players' target stat (eg, hunger, thirst, stress).
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 local x = xPlayer.getStat('hunger')
 ```
 
 ### getSkin()
 Returns the players' skin.
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 local x = xPlayer.getSkin()
 ```
 
 ### getCharId()
 Returns the players' current characters unique identifier.
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 local x = xPlayer.getCharId()
 ```
 
 ### setJob(job)
 Sets the players' current job.
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.setJob({ name = 'police', grade = 0 })
 ```
 
 ### set(key, value)
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.set('foo', 'bar')
 ```
 
 ### setName(value)
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.setName('Billy Bob')
 ```
 
 ### addMoney(value)
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.addMoney(5000)
 ```
 
 ### removeMoney(value)
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.removeMoney(5000)
 ```
 
 ### addBankMoney(value)
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.addBankMoney(5000)
 ```
 
 ### removeBankMoney(value)
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.removeBankMoney(5000)
 ```
 
 ### addAccountMoney(account, value)
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.addAccountMoney("bank", 5000)
 ```
 
 ### removeAccountMoney(account, value)
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.removeAccountMoney("bank", 5000)
 ```
 
 ### setAccount(account, table)
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.setAccount("bank", { ... })
 ```
 
 ### setStat(stat, value)
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.setStat("stress", 50)
 ```
 
 ### setSkin(table)
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 local new_skin = xPlayer.getSkin()
 
 xPlayer.setSkin(new_skin)
 ```
 
 ### showNotification()
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.showNotification(new_skin)
 ```
 
 ### kick(reason)
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.kick("Stinky player found!")
 ```
 
 ### updateData()
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.updateData()
 ```
 
 ### addItem(item, count, metadata?, slot?)
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.addItem('bread', 1)
 ```
 
 ### removeItem(item, count, metadata?, slot?)
-```lua
-local xPlayer = Core.GetPlayerFromId(player:GetID())
-
+```lua copy
 xPlayer.removeItem('bread', 1)
 ```
 
